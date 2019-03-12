@@ -1,0 +1,31 @@
+2 ways to upload artifacts to nexus
+================================================================================================
+1:maven by POM.xml,Jenkins will trigger the maven project,so maven will send artifacts to nexus 
+2.jenkins to upload artifacts to nexus by nexus plugin 
+==================================================================================
+here we are seeing how to upload artifacts by maven (POM.xml)
+Integration:
+1.Install Maven on Jenkins
+2.Create a repo in nexus
+3.integrate maven with nexus URL
+
+add below lines in POM.xml
+<snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Snapshot Releases</name>
+            <url>http://172.31.20.12:8081/repository/maven-snapshots/</url>
+            
+            http://172.31.20.12:8081/repository/maven-snapshots this is called the URL of nexus along with repo of nexus
+            
+            now one more step also we need to do is
+            ### maven should authenticate to NEXUS####
+            add user name of Nexus in Maven configuration file 
+            vim /etc/maven/settings.xml
+            
+            add username and password of nexus
+       then it can authenticate
+       
+       -------------------------------------------------------------------------
+       
+          
+            

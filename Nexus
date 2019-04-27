@@ -44,5 +44,35 @@ add below lines in POM.xml
        
        -------------------------------------------------------------------------
        
-          
+          and 
+          by jenkins console
+          1. first install nexus in to servera and start the nexus with nexus user
+          2. ip:8081 login for nexus ,login as admin andpassword as admin123
+          3.And go to repositories and create a new repo
+          4. go to jenkins console and install plugin **** Nexus platform plugin ****
+          5.and go to configure system in manage jenkins 
+          6. when u install nexus platform plugin u will get 
+          Sonatype Nexus
+ 	Nexus Repository Manager Servers	
+Nexus Repository Manager 3.x Server
+ 	Display Name	
+Nexussdlfsdf
+ 	Server ID	
+bvk-nexus
+Help for feature: Server ID
+ 	Server URL	
+nexus/
+Malformed url (no protocol: nexus/)
+ 	Credentials	
+ 
+ Test connection
+
+      add credentials in credentials,username and password of nexus
+      
+      7. then got to jenkins console create a job 
+      8.and in the build area , u will find sonatype nexus ,there we will give the path of maven artifacts 
+      then build the job..
+      
+    then after build is sucess u can see repository of nexus
+    .................................................
             

@@ -1,3 +1,20 @@
+installation of nexus steps followed by valaxytech
+and i am not able to login with ip:8081
+
+so I had faced the same issue. I initially ran nexus as a root user and i saw a warning "not advised to run as root user". So I stopped the nexus service, tried to restart with nexus user but it didn't restart. The only reason is, when I first ran the nexus as root user, it created some cache files and log files as a root user.
+
+Our nexus installation is on /opt and our nexus db is on /mnt
+
+Solution:
+
+chown -R nexus:nexus /opt/nexus
+
+and even i dint able get console of nexus 
+so i checked the security groups of ec2
+then i able to access the console of nexus
+----------------------------------------------------------
+
+
 2 ways to upload artifacts to nexus
 ================================================================================================
 1:maven by POM.xml,Jenkins will trigger the maven project,so maven will send artifacts to nexus 

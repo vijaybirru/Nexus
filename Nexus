@@ -75,4 +75,30 @@ Malformed url (no protocol: nexus/)
       
     then after build is sucess u can see repository of nexus
     .................................................
+    
+    Configure Nexus
+Define the ID and URL of your Nexus repository in the project’s parent pom.xml:
+
+<!-- file: /Users/mincong/demo/pom.xml -->
+<project>
+  ...
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
+Add username and password in Maven global settings (~/.m2/settings.xml):
+
+<!-- file: /Users/mincong/.m2/settings.xml -->
+<settings>
+  <servers>
+    <server>
+      <id>nexus-snapshots</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+  </servers>
+</settings>
             
